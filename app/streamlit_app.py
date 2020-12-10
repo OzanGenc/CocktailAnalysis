@@ -1,4 +1,11 @@
 import streamlit as st
+
+
+st.spinner(text='In progress...')
+
+
+
+
 import pandas as pd
 from PIL import Image
 

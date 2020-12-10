@@ -1,9 +1,5 @@
 import streamlit as st
-import pandas as pd
-from PIL import Image
 
-similarity_df = pd.read_pickle("./similarity_df.pkl")
-cocktails_df = pd.read_pickle("./cocktails_df.pkl")
 
 def cocktail_recommender(cocktail_name, num_recommendations=10, similarity_df=similarity_df, cocktails_df=cocktails_df):
 
@@ -29,6 +25,12 @@ number_of_recommendations = st.slider(label='Select how many recommendation you 
 
 
 try:
+
+    import pandas as pd
+    from PIL import Image
+
+    similarity_df = pd.read_pickle("./similarity_df.pkl")
+    cocktails_df = pd.read_pickle("./cocktails_df.pkl")
 
     recommended = cocktail_recommender(user_input)
 

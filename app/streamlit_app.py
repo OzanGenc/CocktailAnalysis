@@ -40,11 +40,11 @@ try:
         garnish = recommended.iloc[i].Garnish
         preparation = recommended.iloc[i].Preparation
 
-        st.text("**Recommended Cocktail is** {}".format(name))
+        st.markdown("**Recommended Cocktail is** {}".format(name))
         st.text("Ingrediants: {}".format(ingredients))
         st.text("Garnish: {}".format(garnish))
         st.text("Preparation: {}".format(preparation))
-        st.text("/n")
+        st.text("\n")
 
     st.success('Cocktails found!')
 

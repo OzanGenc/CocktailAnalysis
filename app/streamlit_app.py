@@ -24,15 +24,7 @@ user_input = st.text_input(label="Write name of a cocktail")
 try:
     recommended = cocktail_recommender(user_input)
     out = recommended.index[0] 
-    st.text("Predicted to be  : {}".format(out))
+    st.text("Recommended Cocktail is  : {}".format(out))
 
 except KeyError:
     pass
-
-
-
-'''
-if st.button("Get Next Random Digit"):
-
-    st.text("Predicted to be  : {}".format(out))
-'''

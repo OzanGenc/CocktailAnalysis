@@ -26,7 +26,7 @@ user_input = st.text_input(label="Write name of a cocktail")
 
 try:
 
-    st.success('A cocktail is found!')
+    
     recommended = cocktail_recommender(user_input)
     name = recommended.iloc[0].name
     ingredients = recommended.iloc[0].Ingredients
@@ -37,7 +37,7 @@ try:
     st.text("Ingrediants: {}".format(ingredients))
     st.text("Garnish: {}".format(garnish))
     st.text("Preparation: {}".format(preparation))
-
+    st.success('A cocktail is found!')
 
 
 except KeyError:

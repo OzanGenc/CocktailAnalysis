@@ -19,11 +19,13 @@ def cocktail_recommender(cocktail_name, num_recommendations=10, similarity_df=si
 
 st.title("Cocktail Recommender")
 
+st.text("Cocktail Recommender is a tool that recommends similar cocktails to a given cocktail. ")
+
 user_input = st.text_input(label="Write name of a cocktail")
 
 try:
     recommended = cocktail_recommender(user_input)
-    name = recommended.iloc[0].Name
+    name = recommended.iloc[0].name
     ingredients = recommended.iloc[0].Ingredients
     garnish = recommended.iloc[0].Garnish
     preparation = recommended.iloc[0].Preparation

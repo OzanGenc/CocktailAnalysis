@@ -26,7 +26,6 @@ user_input = st.text_input(label="Write name of a cocktail")
 
 try:
 
-    
     recommended = cocktail_recommender(user_input)
     name = recommended.iloc[0].name
     ingredients = recommended.iloc[0].Ingredients
@@ -41,7 +40,11 @@ try:
 
 
 except KeyError:
-    st.error('Cocktail not found :(')
+
+    if not user_input:
+        pass
+    else:
+        st.error('Cocktail not found :(')
 
 
 

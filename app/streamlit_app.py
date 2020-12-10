@@ -37,7 +37,7 @@ try:
     st.text("Garnish: {}".format(garnish))
     st.text("Preparation: {}".format(preparation))
     st.success('A cocktail is found!')
-    st.image("https://images.app.goo.gl/k8H3KaAstYQPk2ic8", use_column_width=True)
+    st.image("https://github.com/OzanGenc/CocktailAnalysis/blob/main/great_gatsby.jpg", use_column_width=True)
 
 
 except KeyError:

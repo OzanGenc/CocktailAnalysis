@@ -25,22 +25,27 @@ st.text("Cocktail Recommender is a tool that recommends similar cocktails to a g
 user_input = st.text_input(label="Write name of a cocktail")
 
 
-st.slider(label='Select how many recommendation you want', min_value=1, max_value=5, value=1, step=1)
+number_of_recommendations = st.slider(label='Select how many recommendation you want', min_value=1, max_value=5, value=1, step=1)
 
 
 try:
 
     recommended = cocktail_recommender(user_input)
-    name = recommended.iloc[0].name
-    ingredients = recommended.iloc[0].Ingredients
-    garnish = recommended.iloc[0].Garnish
-    preparation = recommended.iloc[0].Preparation
 
-    st.text("Recommended Cocktail is {}".format(name))
-    st.text("Ingrediants: {}".format(ingredients))
-    st.text("Garnish: {}".format(garnish))
-    st.text("Preparation: {}".format(preparation))
-    st.success('A cocktail is found!')
+
+    for i in range(number_of_recommendations):
+        
+        name = recommended.iloc[i].name
+        ingredients = recommended.iloc[i].Ingredients
+        garnish = recommended.iloc[i].Garnish
+        preparation = recommended.iloc[i].Preparation
+
+        st.text("Recommended Cocktail is {}".format(name))
+        st.text("Ingrediants: {}".format(ingredients))
+        st.text("Garnish: {}".format(garnish))
+        st.text("Preparation: {}".format(preparation))
+
+    st.success('Cocktails found!')
 
     image = Image.open('./great_gatsby.jpg')
     st.image(image, use_column_width=True)

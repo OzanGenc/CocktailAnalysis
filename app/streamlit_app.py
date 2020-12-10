@@ -1,4 +1,6 @@
+import pandas as pd
 import streamlit as st
+from PIL import Image
 from utils.utils import cocktail_recommender, load_data
 
 
@@ -14,13 +16,14 @@ number_of_recommendations = st.slider(label='Select how many recommendation you 
 
 try:
 
-    import pandas as pd
-    from PIL import Image
 
     similarity_df, cocktails_df = load_data()
     
-    recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
 
+
+    
+
+    recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
 
     for i in range(number_of_recommendations):
 

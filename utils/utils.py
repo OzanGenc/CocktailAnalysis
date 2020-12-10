@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 
 def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recommendations=10):
 
@@ -18,3 +19,8 @@ def load_data():
     cocktails_df = pd.read_pickle("./cocktails_df.pkl")
 
     return similarity_df, cocktails_df
+
+
+def example_st():
+
+    print(st.text("this is example text"))

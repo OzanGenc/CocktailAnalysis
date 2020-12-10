@@ -23,8 +23,15 @@ user_input = st.text_input(label="Write name of a cocktail")
 
 try:
     recommended = cocktail_recommender(user_input)
-    out = recommended.index[0] 
-    st.text("Recommended Cocktail is  : {}".format(out))
+    name = recommended.iloc[0].Name
+    ingredients = recommended.iloc[0].Ingredients
+    garnish = recommended.iloc[0].Garnish
+    preparation = recommended.iloc[0].Preparation
+
+    st.text("Recommended Cocktail is {}".format(name))
+    st.text("Ingrediants: {}".format(ingredients))
+    st.text("Garnish: {}".format(garnish))
+    st.text("Preparation {}".format(preparation))
 
 except KeyError:
     pass

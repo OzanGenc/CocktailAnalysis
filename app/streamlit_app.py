@@ -24,29 +24,9 @@ st.text("Cocktail Recommender is a tool that recommends similar cocktails to a g
 user_input = st.text_input(label="Write name of a cocktail")
 
 
-if not user_input:
-    st.stop()
-
-
-
-
-recommended = cocktail_recommender(user_input)
-name = recommended.iloc[0].name
-ingredients = recommended.iloc[0].Ingredients
-garnish = recommended.iloc[0].Garnish
-preparation = recommended.iloc[0].Preparation
-
-st.text("Recommended Cocktail is {}".format(name))
-st.text("Ingrediants: {}".format(ingredients))
-st.text("Garnish: {}".format(garnish))
-st.text("Preparation: {}".format(preparation))
-
-
-
-
-
-
 try:
+
+    st.success('A cocktail is found!')
     recommended = cocktail_recommender(user_input)
     name = recommended.iloc[0].name
     ingredients = recommended.iloc[0].Ingredients
@@ -58,7 +38,6 @@ try:
     st.text("Garnish: {}".format(garnish))
     st.text("Preparation: {}".format(preparation))
 
-    st.success('A cocktail is found!')
 
 
 except KeyError:

@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
 
 similarity_df = pd.read_pickle("./similarity_df.pkl")
 cocktails_df = pd.read_pickle("./cocktails_df.pkl")
@@ -37,7 +38,10 @@ try:
     st.text("Garnish: {}".format(garnish))
     st.text("Preparation: {}".format(preparation))
     st.success('A cocktail is found!')
-    st.image("https://github.com/OzanGenc/CocktailAnalysis/blob/main/great_gatsby.jpg", use_column_width=True)
+
+    image = Image.open('./great_gatsby.jpg')
+    st.image(image, use_column_width=True)
+
 
 
 except KeyError:

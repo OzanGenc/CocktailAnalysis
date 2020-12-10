@@ -27,7 +27,7 @@ user_input = st.text_input(label="Write name of a cocktail")
 if not user_input:
     st.stop()
 
-st.success('User input is provided')
+
 
 
 recommended = cocktail_recommender(user_input)
@@ -43,7 +43,8 @@ st.text("Preparation: {}".format(preparation))
 
 
 
-'''
+
+
 
 try:
     recommended = cocktail_recommender(user_input)
@@ -57,8 +58,11 @@ try:
     st.text("Garnish: {}".format(garnish))
     st.text("Preparation: {}".format(preparation))
 
+    st.success('A cocktail is found!')
+
+
 except KeyError:
-    pass
-'''
+    st.error('Cocktail not found :(')
+
 
 

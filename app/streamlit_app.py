@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def cocktail_recommender(cocktail_name, num_recommendations=10, similarity_df=similarity_df, cocktails_df=cocktails_df):
+def cocktail_recommender(cocktail_name, similarity_df, cocktails_df):
 
   recommendations = similarity_df[cocktail_name].sort_values(ascending=False)[1:num_recommendations]
   recommendations.name = 'Similarity'
@@ -32,7 +32,7 @@ try:
     similarity_df = pd.read_pickle("./similarity_df.pkl")
     cocktails_df = pd.read_pickle("./cocktails_df.pkl")
 
-    recommended = cocktail_recommender(user_input)
+    recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
 
 
     for i in range(number_of_recommendations):

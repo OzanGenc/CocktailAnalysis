@@ -25,6 +25,9 @@ st.text("Cocktail Recommender is a tool that recommends similar cocktails to a g
 user_input = st.text_input(label="Write name of a cocktail")
 
 
+st.slider(label='Select how many recommendation you want', min_value=1, max_value=5, value=1, step=1)
+
+
 try:
 
     recommended = cocktail_recommender(user_input)

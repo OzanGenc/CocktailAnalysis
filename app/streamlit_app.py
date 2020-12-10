@@ -1,5 +1,5 @@
-import streamlit as st
-import pandas as pd
+#import streamlit as st
+#import pandas as pd
 
 similarity_df = pd.read_pickle("./similarity_df.pkl")
 cocktails_df = pd.read_pickle("./cocktails_df.pkl")
@@ -17,10 +17,11 @@ def cocktail_recommender(cocktail_name, num_recommendations=10, similarity_df=si
 
 
 
-st.title("Example")
+st.title("Cocktail Recommender")
 
+user_input = st.text_input(label="Write name of a cocktail")
 
-recommended = cocktail_recommender('Margarita')
+recommended = cocktail_recommender(user_input)
 
 out = recommended.index[0] 
 

@@ -21,7 +21,11 @@ st.title("Cocktail Recommender")
 
 user_input = st.text_input(label="Write name of a cocktail")
 
-recommended = cocktail_recommender(user_input)
+try:
+    recommended = cocktail_recommender(user_input)
+
+except KeyError:
+    recommended = cocktail_recommender(user_input)
 
 out = recommended.index[0] 
 

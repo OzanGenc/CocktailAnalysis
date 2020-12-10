@@ -1,17 +1,5 @@
 import streamlit as st
-
-
-def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recommendations=10):
-
-  recommendations = similarity_df[cocktail_name].sort_values(ascending=False)[1:num_recommendations]
-  recommendations.name = 'Similarity'
-
-  cocktails_details = cocktails_df[cocktails_df['Cocktail Name'].isin(recommendations.index)].set_index('Cocktail Name')
-
-  recommendations_df = pd.concat([cocktails_details,recommendations], axis=1).sort_values(by='Similarity', ascending=False)
-
-  return recommendations_df
-
+from utils.utils import cocktail_recommender, load_data
 
 
 st.title("Cocktail Recommender")
@@ -20,8 +8,8 @@ st.text("Cocktail Recommender is a tool that recommends similar cocktails to a g
 
 user_input = st.text_input(label="Write name of a cocktail")
 
-
 number_of_recommendations = st.slider(label='Select how many recommendation you want', min_value=1, max_value=5, value=2, step=1)
+
 
 
 try:
@@ -29,9 +17,8 @@ try:
     import pandas as pd
     from PIL import Image
 
-    similarity_df = pd.read_pickle("./similarity_df.pkl")
-    cocktails_df = pd.read_pickle("./cocktails_df.pkl")
-
+    similarity_df, cocktails_df = load_data()
+    
     recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
 
 

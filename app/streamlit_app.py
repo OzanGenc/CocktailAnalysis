@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def cocktail_recommender(cocktail_name, similarity_df, cocktails_df):
+def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recommendations=10):
 
   recommendations = similarity_df[cocktail_name].sort_values(ascending=False)[1:num_recommendations]
   recommendations.name = 'Similarity'

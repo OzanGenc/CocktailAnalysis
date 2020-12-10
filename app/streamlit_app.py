@@ -23,6 +23,28 @@ st.text("Cocktail Recommender is a tool that recommends similar cocktails to a g
 
 user_input = st.text_input(label="Write name of a cocktail")
 
+
+if not user_input:
+    st.stop()
+
+st.success('User input is provided')
+
+
+recommended = cocktail_recommender(user_input)
+name = recommended.iloc[0].name
+ingredients = recommended.iloc[0].Ingredients
+garnish = recommended.iloc[0].Garnish
+preparation = recommended.iloc[0].Preparation
+
+st.text("Recommended Cocktail is {}".format(name))
+st.text("Ingrediants: {}".format(ingredients))
+st.text("Garnish: {}".format(garnish))
+st.text("Preparation: {}".format(preparation))
+
+
+
+'''
+
 try:
     recommended = cocktail_recommender(user_input)
     name = recommended.iloc[0].name
@@ -33,7 +55,10 @@ try:
     st.text("Recommended Cocktail is {}".format(name))
     st.text("Ingrediants: {}".format(ingredients))
     st.text("Garnish: {}".format(garnish))
-    st.text("Preparation {}".format(preparation))
+    st.text("Preparation: {}".format(preparation))
 
 except KeyError:
     pass
+'''
+
+

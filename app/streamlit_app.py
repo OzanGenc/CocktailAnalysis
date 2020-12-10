@@ -1,5 +1,5 @@
-#import streamlit as st
-#import pandas as pd
+import streamlit as st
+import pandas as pd
 
 similarity_df = pd.read_pickle("./similarity_df.pkl")
 cocktails_df = pd.read_pickle("./cocktails_df.pkl")

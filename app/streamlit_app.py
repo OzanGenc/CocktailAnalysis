@@ -27,7 +27,7 @@ try:
 
     elif user_input:
         recommend_cocktail_similarity_to_ingredients(user_input=user_input, cocktails_df=cocktails_df, vectorizer=vectorizer, number_of_recommendations=number_of_recommendations)
-        image = Image.open('./great_gatsby.jpg')
+        image = Image.open('./ingredient.jpg')
         st.image(image, use_column_width=True)
 
 

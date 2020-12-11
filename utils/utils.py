@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer, ENGLISH_STOP_WORDS
 from sklearn.metrics.pairwise import linear_kernel
-
+from PIL import Image
 
 
 
@@ -72,6 +72,8 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         st.text("\n")
 
     st.success('Recommended based on the name of cocktail provided!')
+    image = Image.open('./great_gatsby.jpg')
+    st.image(image, use_column_width=True)
 
 
 def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vectorizer, number_of_recommendations):

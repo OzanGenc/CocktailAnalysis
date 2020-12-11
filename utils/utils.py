@@ -54,7 +54,6 @@ def etl_function():
 
 def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, number_of_recommendations):
 
-    st.text("Provided cocktail found in database!")
 
     recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
 
@@ -72,4 +71,4 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         st.text("\n")
         st.text("\n")
 
-    st.success('Cocktails found!')
+    st.success('Cocktails found in database!')

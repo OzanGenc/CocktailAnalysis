@@ -104,8 +104,12 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
 
 
         st.success('Recommended based on the ingredients provided!')
+        image = Image.open('./ingredient.jpg')
+        st.image(image, use_column_width=True)
 
 
     else:
         st.error('Please provide more information.')
+        image = Image.open('./error_image.jpg')
+        st.image(image, use_column_width=True)
 

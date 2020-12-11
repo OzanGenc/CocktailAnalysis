@@ -18,7 +18,15 @@ try:
 
     similarity_df, cocktails_df = etl_function()
 
-    recommend_cocktail_key_in_database(user_input=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df, number_of_recommendations=number_of_recommendations)
+    if user_input in cocktails_df['Cocktail Name'].tolist():
+        recommend_cocktail_key_in_database(user_input=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df, number_of_recommendations=number_of_recommendations)
+
+
+    else:
+        st.text("Cocktail not found in database")
+
+    image = Image.open('./great_gatsby.jpg')
+    st.image(image, use_column_width=True)
 
 
 except KeyError:

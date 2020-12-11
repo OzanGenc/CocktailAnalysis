@@ -47,7 +47,7 @@ def etl_function():
 
     similarity_df = pd.DataFrame(similarity_matrix, columns=cocktail_feature_df.index, index=cocktail_feature_df.index)
 
-    return similarity_df, cocktails_df
+    return similarity_df, cocktails_df, vectorizer
 
 
 
@@ -72,3 +72,36 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         st.text("\n")
 
     st.success('Cocktails found in database!')
+
+
+def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vectorizer, number_of_recommendations):
+
+    
+    tfidf_matrix = vectorizer.transform(cocktails_df['All Ingredients'])
+   
+    user_input_vector = vectorizer.transform([user_input])
+
+    similarity_vector = linear_kernel(tfidf_matrix, user_input_vector)
+
+    similarity_pd = pd.DataFrame(similarity_vector, columns=['Similarity'], index=cocktails_df['Cocktail Name']).sort_values(by='Similarity', ascending=False)
+
+    
+
+
+    for i in range(number_of_recommendations):
+
+        name = similarity_pd.iloc[i].name
+        ingredients = cocktails_df[name == cocktails_df['Cocktail Name']].Ingredients
+        garnish = cocktails_df[name == cocktails_df['Cocktail Name']].Garnish
+        preparation = cocktails_df[name == cocktails_df['Cocktail Name']].Preparation
+
+        st.markdown("**Recommended Cocktail is** {}".format(name))
+        st.text("Ingredients: {}".format(ingredients))
+        st.text("Garnish: {}".format(garnish))
+        st.text("Preparation: {}".format(preparation))
+        st.text("\n")
+        st.text("\n")
+
+
+    st.success('Recommended by ingredients!')
+

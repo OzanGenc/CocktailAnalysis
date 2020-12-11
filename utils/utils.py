@@ -21,7 +21,10 @@ def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recomme
 
 def etl_function():
 
-    cocktails_df = pd.read_csv('./cocktails.csv')
+    cocktails_df1 = pd.read_csv('./cocktails.csv')
+    cocktails_df2 = pd.read_csv('./cocktails_db.csv')
+
+    cocktails_df = pd.concat([cocktails_df1, cocktails_df2], axis=0)
 
     cocktails_df['Cocktail Name'] = cocktails_df['Cocktail Name'].str.upper()
 
@@ -33,7 +36,7 @@ def etl_function():
 
     cocktails_df['All Ingredients'] = cocktails_df['Ingredients'] + ',' + cocktails_df['Garnish']
 
-    additional_stop_words = frozenset(['oz', 'simple'])
+    additional_stop_words = frozenset(['oz', 'simple', 'dash', 'bsp', 'drops'])
 
     cocktail_stop_words = ENGLISH_STOP_WORDS.union(additional_stop_words)
 

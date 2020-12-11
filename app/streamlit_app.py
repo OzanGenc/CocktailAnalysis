@@ -1,14 +1,14 @@
 import pandas as pd
 import streamlit as st
 from PIL import Image
-from utils.utils import cocktail_recommender, load_data, example_st
+from utils.utils import cocktail_recommender, etl_function
 
 
 st.title("Cocktail Recommender")
 
 st.text("Cocktail Recommender is a tool that recommends similar cocktails to a given cocktail. ")
 
-user_input = st.text_input(label="Write name of a cocktail")
+user_input = st.text_input(label="Write name of a cocktail").upper()
 
 number_of_recommendations = st.slider(label='Select how many recommendation you want', min_value=1, max_value=5, value=2, step=1)
 
@@ -17,11 +17,8 @@ number_of_recommendations = st.slider(label='Select how many recommendation you 
 try:
 
 
-    similarity_df, cocktails_df = load_data()
+    similarity_df, cocktails_df = etl_function()
     
-
-    example_st()
-
 
     recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
 

@@ -92,8 +92,8 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
 
         name = similarity_pd.iloc[i].name
         ingredients = cocktails_df[name == cocktails_df['Cocktail Name']]['Ingredients'].iloc[0]
-        garnish = cocktails_df[name == cocktails_df['Cocktail Name']].['Garnish'].iloc[0]
-        preparation = cocktails_df[name == cocktails_df['Cocktail Name']].['Preparation'].iloc[0]
+        garnish = cocktails_df[name == cocktails_df['Cocktail Name']]['Garnish'].iloc[0]
+        preparation = cocktails_df[name == cocktails_df['Cocktail Name']]['Preparation'].iloc[0]
 
         st.markdown("**Recommended Cocktail is** {}".format(name))
         st.text("Ingredients: {}".format(ingredients))

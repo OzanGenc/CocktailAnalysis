@@ -49,3 +49,26 @@ def etl_function():
 
     return similarity_df, cocktails_df
 
+
+
+
+def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, number_of_recommendations):
+
+
+    recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
+
+    for i in range(number_of_recommendations):
+
+        name = recommended.iloc[i].name
+        ingredients = recommended.iloc[i].Ingredients
+        garnish = recommended.iloc[i].Garnish
+        preparation = recommended.iloc[i].Preparation
+
+        st.markdown("**Recommended Cocktail is** {}".format(name))
+        st.text("Ingredients: {}".format(ingredients))
+        st.text("Garnish: {}".format(garnish))
+        st.text("Preparation: {}".format(preparation))
+        st.text("\n")
+        st.text("\n")
+
+    st.success('Cocktails found!')

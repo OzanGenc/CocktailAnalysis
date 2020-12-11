@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 from PIL import Image
-from utils.utils import cocktail_recommender, etl_function
+from utils.utils import *
 
 
 st.title("Cocktail Recommender")
@@ -16,31 +16,9 @@ number_of_recommendations = st.slider(label='Select how many recommendation you 
 
 try:
 
-
     similarity_df, cocktails_df = etl_function()
-    
 
-    recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
-
-    for i in range(number_of_recommendations):
-
-        name = recommended.iloc[i].name
-        ingredients = recommended.iloc[i].Ingredients
-        garnish = recommended.iloc[i].Garnish
-        preparation = recommended.iloc[i].Preparation
-
-        st.markdown("**Recommended Cocktail is** {}".format(name))
-        st.text("Ingredients: {}".format(ingredients))
-        st.text("Garnish: {}".format(garnish))
-        st.text("Preparation: {}".format(preparation))
-        st.text("\n")
-        st.text("\n")
-
-    st.success('Cocktails found!')
-
-    image = Image.open('./great_gatsby.jpg')
-    st.image(image, use_column_width=True)
-
+    recommend_cocktail_key_in_database(user_input=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df, number_of_recommendations=number_of_recommendations)
 
 
 except KeyError:

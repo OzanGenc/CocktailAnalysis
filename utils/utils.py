@@ -71,7 +71,7 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         st.text("\n")
         st.text("\n")
 
-    st.success('Cocktails found in database!')
+    st.success('Recommended based on the name of cocktail provided!')
 
 
 def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vectorizer, number_of_recommendations):
@@ -103,5 +103,5 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
         st.text("\n")
 
 
-    st.success('Recommended by ingredients!')
+    st.success('Recommended based on the ingredients provided!')
 

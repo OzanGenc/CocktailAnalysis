@@ -65,9 +65,9 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         preparation = recommended.iloc[i].Preparation
 
         st.markdown("**Recommended Cocktail is** {}".format(name))
-        st.text("Ingredients: {}".format(ingredients))
-        st.text("Garnish: {}".format(garnish))
-        st.text("Preparation: {}".format(preparation))
+        st.markdown("Ingredients: {}".format(ingredients))
+        st.markdown("Garnish: {}".format(garnish))
+        st.markdown("Preparation: {}".format(preparation))
         st.text("\n")
         st.text("\n")
 
@@ -96,9 +96,9 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
         preparation = cocktails_df[name == cocktails_df['Cocktail Name']]['Preparation'].iloc[0]
 
         st.markdown("**Recommended Cocktail is** {}".format(name))
-        st.text("Ingredients: {}".format(ingredients))
-        st.text("Garnish: {}".format(garnish))
-        st.text("Preparation: {}".format(preparation))
+        st.markdown("Ingredients: {}".format(ingredients))
+        st.markdown("Garnish: {}".format(garnish))
+        st.markdown("Preparation: {}".format(preparation))
         st.text("\n")
         st.text("\n")
 

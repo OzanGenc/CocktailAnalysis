@@ -7,7 +7,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 
-@st.cache
+
 def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recommendations=10):
 
     recommendations = similarity_df[cocktail_name].sort_values(ascending=False)[1:num_recommendations]
@@ -20,7 +20,7 @@ def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recomme
     return recommendations_df
 
 
-@st.cache
+
 def etl_function():
 
     cocktails_df1 = pd.read_csv('./cocktails.csv')
@@ -56,7 +56,7 @@ def etl_function():
 
 
 
-@st.cache
+
 def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, number_of_recommendations):
 
 
@@ -90,7 +90,7 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
 
 
 
-@st.cache
+
 def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vectorizer, number_of_recommendations):
 
     

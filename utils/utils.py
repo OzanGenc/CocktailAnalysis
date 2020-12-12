@@ -60,6 +60,10 @@ def etl_function():
 def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, number_of_recommendations):
 
 
+    image = Image.open('./great_gatsby.jpg')
+    st.image(image, use_column_width=True)
+
+
     recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
 
     for i in range(number_of_recommendations):
@@ -85,8 +89,7 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
     st.pyplot(fig)
 
     st.success('Recommended based on the name of cocktail provided!')
-    image = Image.open('./great_gatsby.jpg')
-    st.image(image, use_column_width=True)
+    
 
 
 

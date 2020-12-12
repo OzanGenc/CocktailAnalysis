@@ -107,7 +107,6 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
 
     if similarity_pd.iloc[0]['Similarity'] > 0.1:
 
-        st.success('Recommended based on the ingredients provided!')
         image = Image.open('./ingredient.jpg')
         st.image(image, use_column_width=True)
 
@@ -124,6 +123,8 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
             st.markdown("Preparation: {}".format(preparation))
             st.text("\n")
             st.text("\n")
+
+        st.success('Recommended based on the ingredients provided!')
 
 
     else:

@@ -86,6 +86,7 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         chart_data = similarity_df[user_input].sort_values(ascending=False)[1:6]
         fig, ax = plt.subplots()
         ax.barh(chart_data.index, chart_data.values)
+        ax.invert_yaxis()
         ax.set_title('Similarities to given cocktail')
         st.pyplot(fig)
 

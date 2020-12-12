@@ -78,6 +78,14 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
     image = Image.open('./great_gatsby.jpg')
     st.image(image, use_column_width=True)
 
+    #add bar visualization here
+    if st.checkbox('Show similarities'):
+        
+        chart_data = similarity_df[user_input].sort_values(ascending=False)[1:6]
+        st.bar_chart(chart_data)
+
+
+
 
 def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vectorizer, number_of_recommendations):
 

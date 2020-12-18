@@ -42,35 +42,11 @@ Some preprocessing has been done before applying actual Tf-idf vectorization.
 ***Token pattern:*** Tokenization is only done to elements with alphabetical characters. This is done to prevent to get unnecessary tokens of numbers and symbols.
 
 
-## Conclusion 
+## Conclusion  
+The recommendation system works neatly but there is still room for improvement. One improvement might be using user reviews of the cocktails. This might improve the recommendations because it would also incorporate human perception of cocktails such as *refreshing, fruity, etc.*  
 
+## Acknowledgment
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+I would like to thank Patryk Oleniuk for [helpful post](https://towardsdatascience.com/show-your-ml-project-to-the-internet-in-minutes-2a7bc3167bd0) about quickly deploying ML models to web. I have used the [template](https://github.com/patryk-oleniuk/streamlit-heroku-template) mentioned in the post.  
 
 

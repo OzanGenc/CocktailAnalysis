@@ -7,7 +7,7 @@ Note: The web page may take a few seconds to load because it is deployed using f
 
 
 ## Project Definition
-
+The web app provides recommendations based on given cocktail's or ingredients' names. If the user gives name of a cocktail, the system will recommend cocktails with similar ingredients. The assumption here is that if people love a cocktail, they will love cocktails like this one.    
 
 
 
@@ -17,7 +17,7 @@ Note: The web page may take a few seconds to load because it is deployed using f
 
 
 ## Analysis
-
+Something
 
 
 
@@ -25,3 +25,4 @@ Note: The web page may take a few seconds to load because it is deployed using f
 
 
 ## Conclusion 
+Something

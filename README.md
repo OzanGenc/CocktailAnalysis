@@ -10,14 +10,16 @@ Note: The web page may take a few seconds to load because it is deployed using f
 
 The web app provides recommendations based on given cocktail's or ingredients' names. If the user gives name of a cocktail, the system will recommend cocktails with similar ingredients. The assumption here is that if people love a cocktail, they will love cocktails like this one. 
 
-The users may also give name of the ingredients and get cocktails that contains these ingredients.     
+The users may also give name of the ingredients and get cocktails that contains these ingredients.  
 
 
 ## Data Collection
 Two different datasets were used to create the database of the system. 
-1) [Hotaling & Co.](https://www.kaggle.com/shuyangli94/cocktails-hotaling-co)
+1) [Hotaling & Co. Cocktail Dataset on Kaggle](https://www.kaggle.com/shuyangli94/cocktails-hotaling-co)
+This dataset contains 600+ cocktails with ingredients, recipes, location, name of bartenders, etc.
 
-
+2) [TheCocktailDB](https://www.thecocktaildb.com/) 
+500+ cocktails with the ingredients and recipes were streamed using their API.
 
 
 ## Analysis

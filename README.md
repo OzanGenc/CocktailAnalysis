@@ -19,12 +19,12 @@ Two different datasets were used to create the database of the system.
 This dataset contains 600+ cocktails with ingredients, recipes, location, name of bartenders, etc.
 
 2) [TheCocktailDB](https://www.thecocktaildb.com/) 
-500+ cocktails with the ingredients and recipes were streamed using their API. Details of the streaming can be found on jupyter notebook CocktailDbStreaming.ipynb
+500+ cocktails with the ingredients and recipes were streamed using their API. Details of the streaming can be found on jupyter notebook [CocktailDbStreaming](https://github.com/OzanGenc/CocktailAnalysis/blob/main/CocktailDbStreaming.ipynb)
 
 These two datasets were merged and we obtained a dataset with 1093 unique cocktails and their ingredients and recipes.   
 
 ## Recommendation System
-The system makes recommendations based on similarities of the ingredients. All cocktails' ingrediendts are vectorized using Tf-idf technique. Cosine similarities of vectorized ingredients are calculated to find the similarities of the cocktails. 
+The system makes recommendations based on similarities of the ingredients. All cocktails' ingrediendts are vectorized using Tf-idf technique. Cosine similarities of vectorized ingredients are calculated to find the similarities of the cocktails. The details of the recommendation system can be found on [python file](https://github.com/OzanGenc/CocktailAnalysis/blob/main/utils/utils.py)
 
 **If user gives name of a cocktail that is present in our database;**
 

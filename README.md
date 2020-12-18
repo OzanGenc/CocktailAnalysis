@@ -37,16 +37,9 @@ The given ingredients are vectorized using the same vectorizer and cosine simila
 ### Preprocessing for Tf-idf Vectorizer
 Some preprocessing has been done before applying actual Tf-idf vectorization. 
 
-***Stop words:*** In addition to ENGLISH_STOP_WORDS, the words 'oz', 'simple', 'dash', 'bsp', 'drops' are added as stop words. These words are present in many ingredients and don't provide much information about uniqueness of a cocktail. 
+***Stop words:*** In addition to ENGLISH_STOP_WORDS, the words *'oz', 'simple', 'dash', 'bsp', 'drops'* are added as stop words. These words are present in many ingredients and don't provide much information about uniqueness of a cocktail. 
 
 ***Token pattern:*** Tokenization is done to alphabetical 
-
-
-'oz', 'simple', 'dash', 'bsp', 'drops'
-token_pattern=r'\b[^\d\W][^\d\W]+\b'
-
-
-
 
 
 ## Conclusion 

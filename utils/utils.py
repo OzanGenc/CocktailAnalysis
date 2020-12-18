@@ -60,11 +60,19 @@ def etl_function():
 def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, number_of_recommendations):
 
 
+    recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
+
+    chart_data = similarity_df[user_input].sort_values(ascending=False)[1:6]
+    fig, ax = plt.subplots()
+    ax.barh(chart_data.index, chart_data.values)
+    ax.invert_yaxis()
+    ax.set_title('Similarities to given cocktail')
+    st.pyplot(fig)
+
+
     image = Image.open('./great_gatsby.jpg')
     st.image(image, use_column_width=True)
 
-
-    recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
 
     for i in range(number_of_recommendations):
 
@@ -81,13 +89,6 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         st.text("\n")
 
     
-    chart_data = similarity_df[user_input].sort_values(ascending=False)[1:6]
-    fig, ax = plt.subplots()
-    ax.barh(chart_data.index, chart_data.values)
-    ax.invert_yaxis()
-    ax.set_title('Similarities to given cocktail')
-    st.pyplot(fig)
-
     st.success('Recommended based on the name of cocktail provided!')
     
 
@@ -107,9 +108,6 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
 
     if similarity_pd.iloc[0]['Similarity'] > 0.1:
 
-        image = Image.open('./ingredient.jpg')
-        st.image(image, use_column_width=True)
-
         for i in range(number_of_recommendations):
 
             name = similarity_pd.iloc[i].name
@@ -123,6 +121,10 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
             st.markdown("Preparation: {}".format(preparation))
             st.text("\n")
             st.text("\n")
+
+
+        image = Image.open('./ingredient.jpg')
+        st.image(image, use_column_width=True)
 
         st.success('Recommended based on the ingredients provided!')
 

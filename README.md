@@ -15,7 +15,7 @@ The users may also give name of the ingredients and get cocktails that contains 
 
 ## Data Collection
 Two different datasets were used to create the database of the system. 
-1) [Hotaling & Co.] (https://www.kaggle.com/shuyangli94/cocktails-hotaling-co)
+1) [Hotaling & Co.](https://www.kaggle.com/shuyangli94/cocktails-hotaling-co)
 
 
 

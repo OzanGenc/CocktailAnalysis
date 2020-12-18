@@ -4,7 +4,7 @@ Cocktail Recommender is a system that recommends new cocktails to users. It is d
 
 
 
-Project Definition
+## Project Definition
 
 
 
@@ -14,7 +14,7 @@ Project Definition
 
 
 
-Analysis
+## Analysis
 
 
 
@@ -22,4 +22,4 @@ Analysis
 
 
 
-Conclusion 
+## Conclusion 

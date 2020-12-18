@@ -39,8 +39,7 @@ Some preprocessing has been done before applying actual Tf-idf vectorization.
 
 ***Stop words:*** In addition to ENGLISH_STOP_WORDS, the words *'oz', 'simple', 'dash', 'bsp', 'drops'* are added as stop words. These words are present in many ingredients and don't provide much information about uniqueness of a cocktail. 
 
-***Token pattern:*** Tokenization is done to alphabetical 
-
+***Token pattern:*** Tokenization is only done to elements with alphabetical characters. This is done to prevent to get unnecessary tokens of numbers.
 
 ## Conclusion 
 Something

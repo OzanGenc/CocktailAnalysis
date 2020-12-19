@@ -7,20 +7,19 @@ Cocktail Recommender is a system that recommends new cocktails to users among 10
 
 Note: The web page may take a few seconds to load because it is deployed using free trial of Heroku.
 
-The web app provides recommendations based on given cocktail's or ingredients' names. If the user gives name of a cocktail, the system will recommend cocktails with similar ingredients. The assumption here is that if people love a cocktail, they will love cocktails like this one. 
+The web app provides recommendations based on given cocktail's or ingredients' names. If the user gives name of a cocktail, the system will recommend cocktails with similar ingredients. The assumption here is that if people love a cocktail, they will love cocktails similar to that. 
 
 The users may also give name of the ingredients and get cocktails that contains these ingredients.  
 
 ### Problem Statement
-There are hundreds of cocktails available online. 
-
+There are hundreds of cocktails yet most people know only the famous ones. Aditionally, it can be difficult for many people to try a new cocktail they think they will love. Most of the people hesitate to try something new when it comes to the cocktails, because there are many options with different ingredients. People are not sure which one would be the best to try. Our cocktail recommender system encourages people to try new tastes by utilizing data science and various cocktails in the database.
 
 ### Metrics
-cosine similarity
+Cosine similarity metric is used to make recommendations. It is a convenient metric to determine the degree of the similarity between two vectors. 
+
 
 
 ## Analysis
-
 
 ### Data Exploration
 
@@ -36,6 +35,9 @@ These two datasets were merged and we obtained a dataset with 1093 unique cockta
 
 ### Data Visualization
 bar chart in result
+
+
+
 
 
 ## Methodology

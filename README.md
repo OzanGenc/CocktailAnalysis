@@ -12,7 +12,7 @@ The web app provides recommendations based on given cocktail's or ingredients' n
 The users may also give name of the ingredients and get cocktails that contains these ingredients.  
 
 ### Files
-app/streamlit_app.py is the main file that calls necessary functions from utils/utils.py
+app/streamlit_app.py is the main file that calls necessary functions from utils/utils.py <br/>
 utils/utils.py file contains recommender and etl functions
 CocktailDbStreaming.ipynb is jupyter notebook that performs web scraping from TheCocktailsDB.com
 requirements.txt file contains necessary information about python packages.

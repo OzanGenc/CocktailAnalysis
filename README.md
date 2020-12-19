@@ -12,11 +12,10 @@ The web app provides recommendations based on given cocktail's or ingredients' n
 The users may also give name of the ingredients and get cocktails that contains these ingredients.  
 
 ### Problem Statement
-There are hundreds of cocktails yet most people know only the famous ones. Aditionally, it can be difficult for many people to try a new cocktail they think they will love. Most of the people hesitate to try something new when it comes to the cocktails, because there are many options with different ingredients. People are not sure which one would be the best to try. Our cocktail recommender system encourages people to try new tastes by utilizing data science and various cocktails in the database.
+There are hundreds of cocktails yet most people know only the famous ones. Aditionally, it can be difficult for many people to try a new cocktail they think they will love. Most of the people hesitate to try something new when it comes to the cocktails, because there are many options with different ingredients. Our cocktail recommender system encourages people to try new tastes by utilizing data science and various cocktails in the database.
 
 ### Metrics
 Cosine similarity metric is used to make recommendations. It is a convenient metric to determine the degree of the similarity between two vectors. 
-
 
 
 ## Analysis
@@ -54,7 +53,7 @@ Some preprocessing has been done before applying actual Tf-idf vectorization.
 
 
 ### Implementation
-The system makes recommendations based on similarities of the ingredients. All cocktails' ingrediendts are vectorized using Tf-idf technique. Cosine similarities of vectorized ingredients are calculated to find the similarities of the cocktails. The details of the recommendation system can be found on [python file](https://github.com/OzanGenc/CocktailAnalysis/blob/main/utils/utils.py)
+The system makes recommendations based on similarities of the ingredients. All cocktails' ingrediendts are vectorized using scikit-learn's TfidfVectorizer class. Cosine similarities of vectorized ingredients are calculated using sklearn.metrics.pairwise.linear_kernel class. The details of the recommendation system can be found on [python file](https://github.com/OzanGenc/CocktailAnalysis/blob/main/utils/utils.py)
 
 **If the user gives name of a cocktail that is present in our database;**
 
@@ -68,9 +67,9 @@ The given ingredients are vectorized using the same vectorizer and cosine simila
 ### Refinement
 In the first version of the system, only Hotaling & Co. Cocktail Dataset on Kaggle were used. Despite this dataset has many original cocktails, it lacks some well known ones. It is essential for our database to include popular cocktails because most of the time users will provide these ones. TheCocktailDB is a great website having data of both popular and rare cocktails. Therefore, data from TheCocktailDB has been scraped by using their API and merged with the initial dataset.
 
-Another refinement was adding stop words of *'oz', 'simple', 'dash', 'bsp', 'drops'* to the default stop words in english. These words are present in most of the ingredients and don't provide valuable information in recommendation. Additionally, it is observed that they degrade the performance of the system. For example, if two cocktails have words of drops and oz alot, the calculated similarity between them is inflated than the actual value.
+Another refinement was adding stop words of *'oz', 'simple', 'dash', 'bsp', 'drops'* to the default stop words in english. These words are present in most of the ingredients and don't provide valuable information in recommendation. Additionally, it is observed that they degrade the performance of the system. For example, if two cocktails have words of 'drops' and 'oz' alot, the calculated similarity between them is inflated than the actual value.
 
-The final refinement is that using a token pattern to only tokenize alphabetical elements. In this way, unnecesary tokens such as numbers and symbols are eliminated.  
+The final refinement is that using a token pattern to only tokenize alphabetical elements. In this way, unneccesary tokens such as numbers and symbols are eliminated.  
 
 
 ## Results

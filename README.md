@@ -12,17 +12,17 @@ The web app provides recommendations based on given cocktail's or ingredients' n
 The users may also give name of the ingredients and get cocktails that contains these ingredients.  
 
 ### Files
-app/streamlit_app.py is the main file that calls necessary functions from utils/utils.py <br/>
-utils/utils.py file contains recommender and etl functions
-CocktailDbStreaming.ipynb is jupyter notebook that performs web scraping from TheCocktailsDB.com
-requirements.txt file contains necessary information about python packages.
-cocktails.csv is the dataset of Hotaling & Co.
-cocktails_db.csv is the dataset created from scraping [TheCocktailDB.com](https://www.thecocktaildb.com/)
+**app/streamlit_app.py** is the main file that calls necessary functions from utils/utils.py <br/>
+**utils/utils.py** file contains recommender and etl functions <br/>
+**CocktailDbStreaming.ipynb** is jupyter notebook that performs web scraping from [TheCocktailDB.com](https://www.thecocktaildb.com/) <br/>
+**requirements.txt** file contains necessary information about python packages. <br/>
+**cocktails.csv** is the dataset of Hotaling & Co.  <br/>
+**cocktails_db.csv** is the dataset created from scraping TheCocktailDB.com  <br/>
 
-Below files are for deploying the web app with Heroku
-runtime.txt
-setup.sh
-Procfile
+Below files are for deploying the web app with Heroku  <br/>
+**runtime.txt**  <br/>
+**setup.sh**  <br/>
+**Procfile**  <br/>
 
 
 

@@ -76,13 +76,13 @@ The final refinement is that using a token pattern to only tokenize alphabetical
 ## Results
 
 ### Model Evaluation and Validation
-talk about not having user data
-online user evaluation
 
-
+One difficulty about this system is that it is hard to evaluate the performance of the recommendations objectively. Therefore, many users have been reached to try the system and feedbacks are received. Most of the users stated that they are generally happy with the recommendations.
 
 ### Justification
 why used tfidf
+
+
 
 
 
@@ -99,8 +99,6 @@ it is difficult to evaluate the performance
 
 ### Improvement
 One improvement might be using user reviews of the cocktails. This might improve the recommendations because it would also incorporate human perception of cocktails such as *refreshing, fruity, etc.*  
-
-
 
 
 

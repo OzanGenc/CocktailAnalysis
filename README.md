@@ -36,7 +36,7 @@ These two datasets were merged and we obtained a dataset with 1093 unique cockta
 ### Data Visualization
 bar chart in result
 
-
+![](https://github.com/OzanGenc/CocktailAnalysis/blob/main/cocktail_recommendations_example.png)
 
 
 

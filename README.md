@@ -34,7 +34,7 @@ These two datasets were merged and we obtained a dataset with 1093 unique cockta
 
 
 ### Data Visualization
-bar chart in result
+When a user provides a cocktail name that is present in the database, a bar chart showing cocktail names with corresponding similarities come up.
 
 ![](https://github.com/OzanGenc/CocktailAnalysis/blob/main/cocktail_recommendations_example.png)
 
@@ -45,9 +45,6 @@ bar chart in result
 
 ### Data Preprocessing
 
-***Filling NANs:***
-
-
 #### Preprocessing for Tf-idf Vectorizer
 Some preprocessing has been done before applying actual Tf-idf vectorization. 
 
@@ -56,22 +53,26 @@ Some preprocessing has been done before applying actual Tf-idf vectorization.
 ***Token pattern:*** Tokenization is only done to elements with alphabetical characters. This is done to prevent to get unnecessary tokens of numbers and symbols.
 
 
-
 ### Implementation
 The system makes recommendations based on similarities of the ingredients. All cocktails' ingrediendts are vectorized using Tf-idf technique. Cosine similarities of vectorized ingredients are calculated to find the similarities of the cocktails. The details of the recommendation system can be found on [python file](https://github.com/OzanGenc/CocktailAnalysis/blob/main/utils/utils.py)
 
-**If user gives name of a cocktail that is present in our database;**
+**If the user gives name of a cocktail that is present in our database;**
 
 The cocktails with the highest similarity values to given cocktail are recommended to the user with corresponding ingredients and recipes.  
 
-**If user gives name of the ingredients;**
+**If the user gives name of the ingredients;**
 
 The given ingredients are vectorized using the same vectorizer and cosine similarities between vectorized input ingredients and cocktails ingredients are calculated. The cocktails with the highest similarity values are recommended to user. 
 
 
 ### Refinement
-talk about collecting more data
-talk about adding more stop words
+In the first version of the system, only Hotaling & Co. Cocktail Dataset on Kaggle were used. Despite this dataset has many original cocktails, it lacks some well known ones. It is essential for our database to include popular cocktails because most of the time users will provide these ones. TheCocktailDB is a great website having data of both popular and rare cocktails. Therefore, data from TheCocktailDB has been scraped by using their API and merged with the initial dataset.
+
+Another refinement was adding stop words of *'oz', 'simple', 'dash', 'bsp', 'drops'* to 
+
+
+
+
 talk about applying certain token pattern
 
 

@@ -10,6 +10,23 @@ import matplotlib.pyplot as plt
 
 def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recommendations=10):
 
+    '''
+    This function gets cocktail_name and provides recommendations using similarity values.
+
+    inputs:
+
+    cocktail_name (str): Name of a cocktail provided by the user.
+    similarity_df (pandas dataframe): Dataframe that contains similarity values between cocktails
+    cocktails_df (pandas dataframe): Dataframe that contains cocktails with recipes and ingredients
+    num_recommendations (int): Number of recommendations 
+
+    outputs:
+    recommendations_df (pandas dataframe): Dataframe that contains recommended cocktails with recipes and ingredients
+    
+    '''
+
+
+
     recommendations = similarity_df[cocktail_name].sort_values(ascending=False)[1:num_recommendations]
     recommendations.name = 'Similarity'
 
@@ -22,6 +39,24 @@ def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recomme
 
 
 def etl_function():
+
+
+    '''
+    This function employs Extract Transform Load (ETL) pipeline.
+    The function reads data from csv files, merges the datasets, preprocess data, 
+    applies tf-idf vectorizer, calculates cosine similarities between vectors.
+
+
+    Inputs: None
+
+    Outputs:
+    similarity_df (pandas dataframe):
+    cocktails_df (pandas dataframe):
+    vectorizer (sklearn class): Tf-idf vectorizer class fit to the data
+
+    '''
+
+
 
     cocktails_df1 = pd.read_csv('./cocktails.csv')
     cocktails_df2 = pd.read_csv('./cocktails_db.csv')
@@ -58,6 +93,22 @@ def etl_function():
 
 
 def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, number_of_recommendations):
+
+
+    '''
+    This function is called when user given cocktail name is present in the database. 
+    It uses cocktail_recommender function to give single recommendation. It plots bar chart and prints
+    recommendations for the web app. 
+
+    inputs:
+
+    user_input (str): Name of a cocktail provided by the user.
+    similarity_df (pandas dataframe): Dataframe that contains similarity values between cocktails
+    cocktails_df (pandas dataframe): Dataframe that contains cocktails with recipes and ingredients
+    number_of_recommendations (int): Number of recommendations 
+
+    Output: None
+    '''
 
 
     recommended = cocktail_recommender(cocktail_name=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df)
@@ -97,6 +148,22 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
 def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vectorizer, number_of_recommendations):
 
     
+    '''
+    This function is called when user input is the ingredients present in the database. 
+    It applies tf-idf vectorization to user input, calculates cosine similarities and 
+    prints recommendations for the web app. 
+
+    inputs:
+
+    user_input (str): Name of a cocktail provided by the user.
+    cocktails_df (pandas dataframe): Dataframe that contains cocktails with recipes and ingredients
+    vectorizer (sklearn class): Tf-idf vectorizer class fit to the data
+    number_of_recommendations (int): Number of recommendations 
+
+    Output: None
+    '''
+
+
     tfidf_matrix = vectorizer.transform(cocktails_df['All Ingredients'])
    
     user_input_vector = vectorizer.transform([user_input])

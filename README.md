@@ -68,13 +68,9 @@ The given ingredients are vectorized using the same vectorizer and cosine simila
 ### Refinement
 In the first version of the system, only Hotaling & Co. Cocktail Dataset on Kaggle were used. Despite this dataset has many original cocktails, it lacks some well known ones. It is essential for our database to include popular cocktails because most of the time users will provide these ones. TheCocktailDB is a great website having data of both popular and rare cocktails. Therefore, data from TheCocktailDB has been scraped by using their API and merged with the initial dataset.
 
-Another refinement was adding stop words of *'oz', 'simple', 'dash', 'bsp', 'drops'* to 
+Another refinement was adding stop words of *'oz', 'simple', 'dash', 'bsp', 'drops'* to the default stop words in english. These words are present in most of the ingredients and don't provide valuable information in recommendation. Additionally, it is observed that they degrade the performance of the system. For example, if two cocktails have words of drops and oz alot, the calculated similarity between them is inflated than the actual value.
 
-
-
-
-talk about applying certain token pattern
-
+The final refinement is that using a token pattern to only tokenize alphabetical elements. In this way, unnecesary tokens such as numbers and symbols are eliminated.  
 
 
 ## Results

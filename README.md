@@ -11,6 +11,23 @@ The web app provides recommendations based on given cocktail's or ingredients' n
 
 The users may also give name of the ingredients and get cocktails that contains these ingredients.  
 
+### Files
+app/streamlit_app.py is the main file that calls necessary functions from utils/utils.py
+utils/utils.py file contains recommender and etl functions
+CocktailDbStreaming.ipynb is jupyter notebook that performs web scraping from TheCocktailsDB.com
+requirements.txt file contains necessary information about python packages.
+cocktails.csv is the dataset of Hotaling & Co.
+cocktails_db.csv is the dataset created from scraping [TheCocktailDB.com](https://www.thecocktaildb.com/)
+
+Below files are for deploying the web app with Heroku
+runtime.txt
+setup.sh
+Procfile
+
+
+
+
+
 ### Problem Statement
 There are hundreds of cocktails yet most people know only the famous ones. Aditionally, it can be difficult for many people to try a new cocktail they think they will love. Most of the people hesitate to try something new when it comes to the cocktails, because there are many options with different ingredients. Our cocktail recommender system encourages people to try new tastes by utilizing data science and various cocktails in the database.
 

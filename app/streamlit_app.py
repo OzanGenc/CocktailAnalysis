@@ -3,6 +3,15 @@ import streamlit as st
 from utils.utils import *
 
 
+'''
+This script prints title and information about the web app. It takes user input and provides 
+recommendations using the functions from utils.utils file. 
+
+'''
+
+
+
+
 st.title("Cocktail Recommender")
 
 st.markdown("Cocktail Recommender is a tool that recommends cocktails based on provided cocktail name or ingredients. You can provide name of a cocktail to find similar cocktails to it or you can write ingedients you like and get recommendations based on that.")

@@ -86,7 +86,7 @@ As stated before, tf-idf vectorization method is used to represent the ingredien
 ## Conclusion  
 
 ### Reflection
-Transforming text data into vectors and calculating cosine similarity values between these vectors helped us to solve the problem. Obtaining data from different sources, merging them together, doing some preprocessing needed at first. The most challenging part of the project was to find suitable data for our project. There are many great website about cocktails with ingredients, recipes and user reviews. However, all of them prohibited web scraping. Hence finding open source data was one part of the challenge.  
+Transforming text data into vectors and calculating cosine similarity values between these vectors helped us to solve the problem. Obtaining data from different sources, merging the data together and doing some preprocessing were needed at first. The most challenging part of the project was to find suitable data for it. There are many great website of cocktails with ingredients, recipes and user reviews. However, all of them prohibited web scraping. Hence finding open source data was one part of the challenge.  
 
 ### Improvement
 One improvement might be using user reviews of the cocktails. This might improve the recommendations because it would also incorporate human perception of cocktails such as *refreshing, fruity, etc.*  

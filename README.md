@@ -76,20 +76,14 @@ The final refinement is that using a token pattern to only tokenize alphabetical
 ## Results
 
 ### Model Evaluation and Validation
-
 One difficulty about this system is that it is hard to evaluate the performance of the recommendations objectively. Therefore, many users have been reached to try the system and feedbacks are received. Most of the users stated that they are generally happy with the recommendations.
 
 ### Justification
-why used tfidf
-
-
-
-
+As stated before, tf-idf vectorization method is used to represent the ingredients as numeric values. This technique is simple yet powerful. It transforms cocktails with similar ingredients to similar vectors. One major advantage of the method over Bag of Words method is that it weights high to the rare tokens. In this way, similar cocktails with rare ingredients could be related more sucessfully. 
 
 
 
 ## Conclusion  
-
 
 ### Reflection
 summarize end to end solution
@@ -99,7 +93,6 @@ it is difficult to evaluate the performance
 
 ### Improvement
 One improvement might be using user reviews of the cocktails. This might improve the recommendations because it would also incorporate human perception of cocktails such as *refreshing, fruity, etc.*  
-
 
 
 ## Acknowledgment

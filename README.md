@@ -3,7 +3,7 @@
 ## Project Definition
 
 ### Project Overview
-Cocktail Recommender is a system that recommends new cocktails to users among 1093 unique cocktails. It is deployed on https://cocktail-recommender.herokuapp.com/ using Heroku and Streamlit.
+Cocktail Recommender is a system that recommends new cocktails to users among 1094 unique cocktails. It is deployed on https://cocktail-recommender.herokuapp.com/ using Heroku and Streamlit.
 
 Note: The web page may take a few seconds to load because it is deployed using free trial of Heroku.
 

@@ -29,10 +29,7 @@ Below files are for deploying the web app with Heroku  <br/>
 
 
 ### Problem Statement
-There are hundreds of cocktails yet most people know only the famous ones. Aditionally, it can be difficult for many people to try a new cocktail they think they will love. Most of the people hesitate to try something new when it comes to the cocktails, because there are many options with different ingredients. Our cocktail recommender system encourages people to try new tastes by utilizing data science and various cocktails in the database.
-
-### Metrics
-Cosine similarity metric is used to make recommendations. It is a convenient metric to determine the degree of the similarity between two vectors. 
+There are hundreds of cocktails yet most people know only the famous ones. Additionally, it can be difficult for many people to try a new cocktail they think they will love. Most of the people hesitate to try something new when it comes to the cocktails, because there are many options with different ingredients. Our cocktail recommender system encourages people to try new tastes by utilizing data science and various cocktails in the database.
 
 
 ## Analysis

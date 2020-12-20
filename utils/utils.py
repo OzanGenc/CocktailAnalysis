@@ -195,7 +195,7 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
 
     if similarity_pd.iloc[0]['Similarity'] > 0.1:
 
-        for i in range(number_of_recommendations):
+        for i in range(0,2):
 
             name = similarity_pd.iloc[i].name
             ingredients = cocktails_df[name == cocktails_df['Cocktail Name']]['Ingredients'].iloc[0]
@@ -210,6 +210,8 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
             st.text("\n")
 
 
+        image = Image.open('./ingredient.jpg')
+        st.image(image, use_column_width=True)
         st.success('Recommended based on the ingredients provided!')
 
 
@@ -231,9 +233,6 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
                 st.text("\n")
                 st.text("\n")
 
-
-        image = Image.open('./ingredient.jpg')
-        st.image(image, use_column_width=True)
 
     else:
         st.error('Please provide more information.')

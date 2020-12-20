@@ -49,7 +49,7 @@ These two datasets were merged and we obtained a dataset with 1093 unique cockta
 ### Data Visualization
 When a user provides a cocktail name that is present in the database, a bar chart showing cocktail names with corresponding similarities come up.
 
-![](https://github.com/OzanGenc/CocktailAnalysis/blob/main/cocktail_recommendations_example.png)
+![](https://github.com/OzanGenc/CocktailAnalysis/blob/main/cocktail_recommendations_example_image.png)
 
 
 

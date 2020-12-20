@@ -124,8 +124,10 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
     image = Image.open('./great_gatsby.jpg')
     st.image(image, use_column_width=True)
 
+    st.success('Recommended based on the name of cocktail provided!')
 
-    for i in range(number_of_recommendations):
+
+    for i in range(0,2):
 
         name = recommended.iloc[i].name
         ingredients = recommended.iloc[i].Ingredients
@@ -140,15 +142,25 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         st.text("\n")
 
     
-    my_expander = st.beta_expander('Example')
+    my_expander = st.beta_expander('Show more recommendations')
     with my_expander:
-        'Hello there!'
-        clicked = st.button('Click me!')
+            
+        for i in range(2, number_of_recommendations):
+
+            name = recommended.iloc[i].name
+            ingredients = recommended.iloc[i].Ingredients
+            garnish = recommended.iloc[i].Garnish
+            preparation = recommended.iloc[i].Preparation
+
+            st.markdown("**Recommended Cocktail is** {}".format(name))
+            st.markdown("Ingredients: {}".format(ingredients))
+            st.markdown("Garnish: {}".format(garnish))
+            st.markdown("Preparation: {}".format(preparation))
+            st.text("\n")
+            st.text("\n")
+            
+
     
-
-
-
-    st.success('Recommended based on the name of cocktail provided!')
     
 
 
@@ -198,11 +210,30 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
             st.text("\n")
 
 
-        image = Image.open('./ingredient.jpg')
-        st.image(image, use_column_width=True)
-
         st.success('Recommended based on the ingredients provided!')
 
+
+        my_expander = st.beta_expander('Show more recommendations')
+        with my_expander:
+
+
+            for i in range(2, number_of_recommendations):
+
+                name = similarity_pd.iloc[i].name
+                ingredients = cocktails_df[name == cocktails_df['Cocktail Name']]['Ingredients'].iloc[0]
+                garnish = cocktails_df[name == cocktails_df['Cocktail Name']]['Garnish'].iloc[0]
+                preparation = cocktails_df[name == cocktails_df['Cocktail Name']]['Preparation'].iloc[0]
+
+                st.markdown("**Recommended Cocktail is** {}".format(name))
+                st.markdown("Ingredients: {}".format(ingredients))
+                st.markdown("Garnish: {}".format(garnish))
+                st.markdown("Preparation: {}".format(preparation))
+                st.text("\n")
+                st.text("\n")
+
+
+        image = Image.open('./ingredient.jpg')
+        st.image(image, use_column_width=True)
 
     else:
         st.error('Please provide more information.')

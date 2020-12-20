@@ -9,7 +9,7 @@ st.markdown("Cocktail Recommender is a tool that recommends cocktails based on p
 
 user_input = st.text_input(label="Please write a cocktail name.").upper()
 
-number_of_recommendations = st.slider(label='Please select how many recommendation you want.', min_value=1, max_value=5, value=2, step=1)
+number_of_recommendations = 5
 
 
 similarity_df, cocktails_df, vectorizer = etl_function()

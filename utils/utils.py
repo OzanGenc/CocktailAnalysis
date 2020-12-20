@@ -140,6 +140,14 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
         st.text("\n")
 
     
+    my_expander = st.beta_expander()
+    with my_expander:
+        'Hello there!'
+        clicked = st.button('Click me!')
+    
+
+
+
     st.success('Recommended based on the name of cocktail provided!')
     
 

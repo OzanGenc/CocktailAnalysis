@@ -37,7 +37,7 @@ def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recomme
 
 
 
-def etl_function():
+def etl_function(isAlcoholic=True):
 
 
     '''
@@ -46,21 +46,25 @@ def etl_function():
     applies tf-idf vectorizer, calculates cosine similarities between vectors.
 
 
-    Inputs: None
+    Inputs: 
+    isAlcoholic (Boolean): A flag that controls the output cocktails to be alcoholic or non alcoholic
 
     Outputs:
-    similarity_df (pandas dataframe):
-    cocktails_df (pandas dataframe):
+    similarity_df (pandas dataframe): Dataframe that contains similarity values between cocktails
+    cocktails_df (pandas dataframe): Dataframe that contains cocktails with recipes and ingredients
     vectorizer (sklearn class): Tf-idf vectorizer class fit to the data
 
     '''
 
 
+    if isAlcoholic:
+        cocktails_df1 = pd.read_csv('./cocktails.csv')
+        cocktails_df2 = pd.read_csv('./cocktails_db.csv')
+        cocktails_df = pd.concat([cocktails_df1, cocktails_df2], axis=0)
 
-    cocktails_df1 = pd.read_csv('./cocktails.csv')
-    cocktails_df2 = pd.read_csv('./cocktails_db.csv')
+    else:
+        cocktails_df = pd.read_csv('./cocktails_non_alcoholic_db.csv')
 
-    cocktails_df = pd.concat([cocktails_df1, cocktails_df2], axis=0)
 
     cocktails_df['Cocktail Name'] = cocktails_df['Cocktail Name'].str.upper()
 

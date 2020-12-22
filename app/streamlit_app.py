@@ -19,9 +19,9 @@ provided_cocktail = cocktails_df[cocktails_df['Cocktail Name'] == user_input]
 
 if user_input:
     name = provided_cocktail['Cocktail Name'][0]
-    ingredients = provided_cocktail.['Ingredients'][0]
-    garnish = provided_cocktail.['Garnish'][0]
-    preparation = provided_cocktail.['Preparation'][0]
+    ingredients = provided_cocktail['Ingredients'][0]
+    garnish = provided_cocktail['Garnish'][0]
+    preparation = provided_cocktail['Preparation'][0]
 
     st.markdown("**Given Cocktail is** {}".format(name))
     st.markdown("Ingredients: {}".format(ingredients))

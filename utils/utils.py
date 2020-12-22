@@ -37,7 +37,7 @@ def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recomme
 
 
 
-def etl_function(isAlcoholic=True):
+def etl_function(isAlcoholic):
 
 
     '''
@@ -68,7 +68,11 @@ def etl_function(isAlcoholic=True):
 
     cocktails_df['Cocktail Name'] = cocktails_df['Cocktail Name'].str.upper()
 
-    cocktails_df.drop(columns=['Bartender', 'Location', 'Bar/Company', 'Glassware', 'Notes'], inplace=True)
+    try:
+        cocktails_df.drop(columns=['Bartender', 'Location', 'Bar/Company', 'Glassware', 'Notes'], inplace=True)
+    except:
+        pass
+
 
     cocktails_df.drop_duplicates(subset='Cocktail Name', inplace=True)
 

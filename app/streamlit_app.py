@@ -17,15 +17,16 @@ similarity_df, cocktails_df, vectorizer = etl_function()
 
 provided_cocktail = cocktails_df[cocktails_df['Cocktail Name'] == user_input]
 
-name = provided_cocktail['Cocktail Name']
-ingredients = provided_cocktail.Ingredients
-garnish = provided_cocktail.Garnish
-preparation = provided_cocktail.Preparation
+if user_input:
+    name = provided_cocktail['Cocktail Name'][0]
+    ingredients = provided_cocktail.['Ingredients'][0]
+    garnish = provided_cocktail.['Garnish'][0]
+    preparation = provided_cocktail.['Preparation'][0]
 
-st.markdown("**Given Cocktail is** {}".format(name))
-st.markdown("Ingredients: {}".format(ingredients))
-st.markdown("Garnish: {}".format(garnish))
-st.markdown("Preparation: {}".format(preparation))
+    st.markdown("**Given Cocktail is** {}".format(name))
+    st.markdown("Ingredients: {}".format(ingredients))
+    st.markdown("Garnish: {}".format(garnish))
+    st.markdown("Preparation: {}".format(preparation))
 
 
 

@@ -18,7 +18,6 @@ The users may also give name of the ingredients and get cocktails that contains 
 **requirements.txt** file contains necessary information about python packages. <br/>
 **cocktails.csv** is the dataset of Hotaling & Co.  <br/>
 **cocktails_db.csv** is the dataset created from scraping TheCocktailDB.com  <br/>
-**cocktails_non_alcoholic_db.csv** is the dataset containing non alcoholic cocktails created from scraping TheCocktailDB.com  <br/>
 
 Below files are for deploying the web app with Heroku  <br/>
 **runtime.txt**  <br/>

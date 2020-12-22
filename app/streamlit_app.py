@@ -14,6 +14,21 @@ number_of_recommendations = 5
 
 similarity_df, cocktails_df, vectorizer = etl_function()
 
+
+provided_cocktail = cocktails_df[cocktails_df['Cocktail Name'] == user_input]
+
+name = recommended.iloc[i].name
+ingredients = provided_cocktail.Ingredients
+garnish = provided_cocktail.Garnish
+preparation = provided_cocktail.Preparation
+
+st.markdown("**Given Cocktail is** {}".format(name))
+st.markdown("Ingredients: {}".format(ingredients))
+st.markdown("Garnish: {}".format(garnish))
+st.markdown("Preparation: {}".format(preparation))
+
+
+
 if user_input in cocktails_df['Cocktail Name'].tolist():
     recommend_cocktail_key_in_database(user_input=user_input, similarity_df=similarity_df, cocktails_df=cocktails_df, number_of_recommendations=number_of_recommendations)
 

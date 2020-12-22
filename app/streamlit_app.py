@@ -17,7 +17,7 @@ similarity_df, cocktails_df, vectorizer = etl_function()
 
 provided_cocktail = cocktails_df[cocktails_df['Cocktail Name'] == user_input]
 
-name = recommended.iloc[i].name
+name = provided_cocktail['Cocktail Name']
 ingredients = provided_cocktail.Ingredients
 garnish = provided_cocktail.Garnish
 preparation = provided_cocktail.Preparation

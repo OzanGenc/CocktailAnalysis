@@ -14,7 +14,6 @@ def cocktail_recommender(cocktail_name, similarity_df, cocktails_df, num_recomme
     This function gets cocktail_name and provides recommendations using similarity values.
 
     inputs:
-
     cocktail_name (str): Name of a cocktail provided by the user.
     similarity_df (pandas dataframe): Dataframe that contains similarity values between cocktails
     cocktails_df (pandas dataframe): Dataframe that contains cocktails with recipes and ingredients
@@ -92,6 +91,35 @@ def etl_function():
 
 
 
+def print_given_cocktail(user_input, cocktails_df):
+
+
+    '''
+    This function prints the details of the given cocktail by the user.
+    
+    inputs:
+    user_input (str): Name of a cocktail provided by the user.
+    cocktails_df (pandas dataframe): Dataframe that contains cocktails with recipes and ingredients
+    
+    Output: None
+    '''
+
+    provided_cocktail = cocktails_df[cocktails_df['Cocktail Name'] == user_input]
+
+    name = provided_cocktail['Cocktail Name'][0]
+    ingredients = provided_cocktail['Ingredients'][0]
+    garnish = provided_cocktail['Garnish'][0]
+    preparation = provided_cocktail['Preparation'][0]
+
+    st.markdown("**Given Cocktail is** {}".format(name))
+    st.markdown("Ingredients: {}".format(ingredients))
+    st.markdown("Garnish: {}".format(garnish))
+    st.markdown("Preparation: {}".format(preparation))
+
+
+
+
+
 def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, number_of_recommendations):
 
 
@@ -101,7 +129,6 @@ def recommend_cocktail_key_in_database(user_input, similarity_df, cocktails_df, 
     recommendations for the web app. 
 
     inputs:
-
     user_input (str): Name of a cocktail provided by the user.
     similarity_df (pandas dataframe): Dataframe that contains similarity values between cocktails
     cocktails_df (pandas dataframe): Dataframe that contains cocktails with recipes and ingredients
@@ -174,7 +201,6 @@ def recommend_cocktail_similarity_to_ingredients(user_input, cocktails_df, vecto
     prints recommendations for the web app. 
 
     inputs:
-
     user_input (str): Name of a cocktail provided by the user.
     cocktails_df (pandas dataframe): Dataframe that contains cocktails with recipes and ingredients
     vectorizer (sklearn class): Tf-idf vectorizer class fit to the data

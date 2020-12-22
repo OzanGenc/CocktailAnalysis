@@ -12,14 +12,7 @@ user_input = st.text_input(label="Please write a cocktail name.").upper()
 number_of_recommendations = 5
 
 
-agree = st.checkbox("Non alcoholic")
-if agree:
-    isAlcoholic = False
-else:
-    isAlcoholic=True
-
-
-similarity_df, cocktails_df, vectorizer = etl_function(isAlcoholic=isAlcoholic)
+similarity_df, cocktails_df, vectorizer = etl_function()
 
 
 if user_input in cocktails_df['Cocktail Name'].tolist():

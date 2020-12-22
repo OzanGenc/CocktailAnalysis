@@ -106,10 +106,10 @@ def print_given_cocktail(user_input, cocktails_df):
 
     provided_cocktail = cocktails_df[cocktails_df['Cocktail Name'] == user_input]
 
-    name = provided_cocktail['Cocktail Name'][0]
-    ingredients = provided_cocktail['Ingredients'][0]
-    garnish = provided_cocktail['Garnish'][0]
-    preparation = provided_cocktail['Preparation'][0]
+    name = provided_cocktail['Cocktail Name'].iloc[0]
+    ingredients = provided_cocktail['Ingredients'].iloc[0]
+    garnish = provided_cocktail['Garnish'].iloc[0]
+    preparation = provided_cocktail['Preparation'].iloc[0]
 
     st.markdown("**Given Cocktail is** {}".format(name))
     st.markdown("Ingredients: {}".format(ingredients))

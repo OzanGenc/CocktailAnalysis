@@ -3,7 +3,7 @@
 ## Project Definition
 
 ### Project Overview
-Cocktail Recommender is a system that recommends new cocktails to users among 1094 unique cocktails. It is deployed on https://cocktail-recommender.herokuapp.com/ using Heroku and Streamlit.
+Cocktail Recommender is a system that recommends new cocktails to users among 1049 unique cocktails. It is deployed on https://cocktail-recommender.herokuapp.com/ using Heroku and Streamlit.
 
 Note: The web page may take a few seconds to load because it is deployed using free trial of Heroku.
 
@@ -43,7 +43,7 @@ This dataset contains 600+ cocktails with ingredients, recipes, location, name o
 2) [TheCocktailDB](https://www.thecocktaildb.com/) 
 500+ cocktails with the ingredients and recipes were streamed using their API. Details of the streaming can be found on jupyter notebook [CocktailDbStreaming](https://github.com/OzanGenc/CocktailAnalysis/blob/main/CocktailDbStreaming.ipynb)
 
-These two datasets were merged and we obtained a dataset with 1093 unique cocktails and their ingredients and recipes.  
+These two datasets were merged and we obtained a dataset with 1049 unique cocktails and their ingredients and recipes.  
 
 
 ### Data Visualization
